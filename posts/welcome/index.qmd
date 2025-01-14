@@ -2,11 +2,11 @@
 title: "How Weather Impacts Bike-Sharing: Using Data Science to Optimize Demand Prediction"
 author: "Dhruv Garg"
 date: "2025-01-17"
-categories: [Project]
+categories: [Blog]
 ---
 
 
-![](thumbnail.jpg)
+![[Reference](https://spokesbicyclerentals.com)](cover_img.jpg)
 
 
 # Introduction  
