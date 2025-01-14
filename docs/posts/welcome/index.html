@@ -177,6 +177,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Event Indicators: Data regarding holidays and whether the system was up or not; holidays tend to have lower demand, while weekdays are usually more consistent.</li>
 </ol>
 <p>We cleaned up the data before diving into the analysis. One thing we noticed was that the “Dew Point Temperature” variable was basically telling us the same thing as regular temperature - they moved up and down together. Since it wasn’t adding any new insights and could actually mess with our machine learning predictions, we decided to drop it.</p>
+<p>Are you interested in knowing more about what will be the issue if we don’t drop “Dew Point Temperature”? Check out this answer which have some good links about <a href="https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features">multicollinearity</a>.</p>
 </section>
 </section>
 <section id="how-weather-affects-bike-demand" class="level1">
