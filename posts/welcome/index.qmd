@@ -26,6 +26,8 @@ To address this challenge, we analyzed a detailed [dataset](https://archive.ics.
 
 We cleaned up the data before diving into the analysis. One thing we noticed was that the "Dew Point Temperature" variable was basically telling us the same thing as regular temperature - they moved up and down together. Since it wasn't adding any new insights and could actually mess with our machine learning predictions, we decided to drop it.
 
+Are you interested in knowing more about what will be the issue if we don't drop "Dew Point Temperature"? Check out this answer which have some good links about [multicollinearity](https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features).
+
 # How Weather Affects Bike Demand
 Weather plays a huge role in bike-sharing. Factors such as temperature, humidity, and wind speed directly influence people's decisions to get on a bike. For instance, higher temperatures usually increase the number of cyclists, while very low temperatures or high humidity may decrease the number.
 
