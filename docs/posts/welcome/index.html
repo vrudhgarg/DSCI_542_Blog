@@ -162,28 +162,32 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Imagine you’re heading to work, and the bike-sharing station near your house always has bikes ready for you, no matter the season or time of day. This level of convenience, which many urban commuters now take for granted, is made possible by the power of data science. Behind the scenes, predictive models analyze a variety of factors—like weather patterns, time of day, and even holidays—to ensure bike-sharing systems are optimally prepared to meet demand.</p>
-<p>Our project sought to address a key question: how can weather and time-related factors help predict bike-sharing demand? Using data science, we aimed to uncover patterns in bike usage, enabling better resource allocation and improved user satisfaction. The importance of this work cannot be overstated—bike-sharing programs are a critical part of sustainable urban transport systems, offering an eco-friendly alternative to cars and helping to solve the “last-mile problem.”</p>
-<p>This essay outlines our approach, from data collection to model selection, and highlights key insights that can help bike-sharing companies optimize their services.</p>
+<p>Have you ever walked up to a bike-sharing station and found it empty just when you needed a ride? Frustrating, right? What if bike-sharing systems could predict exactly when and where people will need bikes, ensuring they’re always available? That’s where data science comes in!</p>
+<p>Our project explored how weather, time, and events impact bike-sharing demand. Using data from Seoul’s bike-sharing system, we developed predictive models to uncover patterns and provide insights that could help bike-sharing companies improve their services.</p>
+<section id="the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem">The Problem</h3>
+<p>Bike-sharing programs face the ongoing challenge of ensuring bikes are available where and when they’re needed. Fluctuating demand, influenced by factors like time of day, weather, and season, makes this task even more complex. Without accurate predictions, riders may encounter empty stations or delays, undermining the convenience these programs are designed to offer. A data-driven solution is crucial to accurately forecast bike demand and enable better planning for efficient operations.</p>
 </section>
-<section id="the-data" class="level1">
-<h1>The Data</h1>
-<p>The foundation of any predictive model is the data it relies on, and our project was no exception. We used a dataset from Seoul’s bike-sharing system, which provides comprehensive records of hourly bike rentals along with information about weather, time, and events. This dataset included the following features:</p>
+<section id="what-we-looked-at" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-looked-at">What We Looked At</h3>
+<p>To address this challenge, we analyzed a detailed <a href="https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand">dataset</a> from Seoul’s bike-sharing program. The dataset included:</p>
 <ol type="1">
-<li>Weather Data:
-<ul>
-<li>Key weather indicators such as temperature, humidity, wind speed, and visibility were provided. These factors significantly influence bike-sharing demand, as users are less likely to cycle in extreme weather conditions. For instance, high humidity or strong winds might deter users, even if temperatures are moderate.</li>
-</ul></li>
-<li>Time Information:
-<ul>
-<li>Temporal features like the hour of the day, the day of the week, and the season were included to capture daily and seasonal trends. For example, morning and evening commuting hours typically see spikes in bike usage, while weekends might have more leisure-related rentals.</li>
-</ul></li>
-<li>Event Indicators:
-<ul>
-<li>Features like holidays and whether the bike-sharing system was operational on a given day were critical for identifying demand fluctuations. Holidays often see a drop in rentals due to reduced commuting activity, while system outages can lead to temporary dips in usage.</li>
-</ul></li>
+<li>Weather Data: These include temperature, humidity, wind speed, and visibility, factors that might be very influential in people’s decisions to ride or not.</li>
+<li>Temporal Information: Patterns concerning the time of day, day of week, and season. For instance, rush hour and summer days are periods of high demand.</li>
+<li>Event Indicators: Data regarding holidays and whether the system was up or not; holidays tend to have lower demand, while weekdays are usually more consistent.</li>
 </ol>
-<p>One of the first steps in our analysis was ensuring the dataset was clean and reliable. We carefully checked for missing values, inconsistencies, and redundant variables. For instance, we removed the “Dew Point Temperature” variable, which was highly correlated with temperature and added no additional predictive value. This step reduced noise in the data and ensured our models could focus on the most relevant features.</p>
+<p>We cleaned up the data before diving into the analysis. One thing we noticed was that the “Dew Point Temperature” variable was basically telling us the same thing as regular temperature - they moved up and down together. Since it wasn’t adding any new insights and could actually mess with our machine learning predictions, we decided to drop it.</p>
+</section>
+</section>
+<section id="how-weather-affects-bike-demand" class="level1">
+<h1>How Weather Affects Bike Demand</h1>
+<p>Weather plays a huge role in bike-sharing. Factors such as temperature, humidity, and wind speed directly influence people’s decisions to get on a bike. For instance, higher temperatures usually increase the number of cyclists, while very low temperatures or high humidity may decrease the number.</p>
+<p>Time of day and events such as holidays are also important. The morning and evening hours of commuting have the highest demand, while holidays usually have fewer rentals because of the reduced number of work commutes.</p>
+</section>
+<section id="the-data-behind-the-study" class="level1">
+<h1>The Data Behind the Study</h1>
+<p>We used a dataset from Seoul’s bike-sharing system. This dataset included:</p>
+<p>Weather Data: Temperature, humidity, wind speed, and visibility. Time Data: Hour of the day, day of the week, and season. Event Indicators: Holidays and system functionality (e.g., whether the bike-sharing program was operational). To ensure accuracy, we cleaned the data by removing unnecessary variables like “Dew Point Temperature,” which didn’t add value to our predictions. This step ensured our models focused only on meaningful factors.</p>
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
