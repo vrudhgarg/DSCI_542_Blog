@@ -13,20 +13,25 @@ categories: [Blog]
 
 
 ## 🚀 Introduction 
+<div style="text-align: justify; margin: 20px;">
 Have you ever walked up to a bike-sharing station and found it empty just when you needed a ride? Frustrating, right? 
 What if bike-sharing systems could predict exactly when and where people will need bikes, ensuring they're always available? 
 That's where data science comes in! This project explored how weather, time, and events impact bike-sharing demand.
 Using data from Seoul's bike-sharing system, we developed predictive models to uncover patterns and provide insights
 that could help bike-sharing companies improve their services. 
+</div>
 
 ## ❓ The Problem
+<div style="text-align: justify; margin: 20px;">
 The challenge that bike-sharing programs consistently need to overcome is the availability of bikes at any 
 given time and location. Demand varies according to time of day, weather, and season, complicating the issue further. 
 Without an accurate forecast, riders may be confronted with either empty stations or delayed service, 
 defeating the very purpose of convenience these programs aim to provide. A data-driven approach will accurately 
 forecast bike demand and thus allow for better planning in the interest of operational efficiency.
+</div>
 
 ## 🔍 What We Looked At
+<div style="text-align: justify; margin: 20px;">
 To address this challenge, we analyzed a detailed [dataset](https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand) from Seoul’s bike-sharing program. The dataset included:
 
 1. Weather Data: These include temperature, humidity, wind speed, and visibility, factors that might be very influential in people's decisions to ride or not.
@@ -41,13 +46,16 @@ we decided to drop it.
 :::{.callout-note}
 Curious about the issue? Check out this [link](https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features).
 :::
+</div>
 
-### 🌦️ How Weather Affects Bike Demand
+## 🌦️ How Weather Affects Bike Demand
+<div style="text-align: justify; margin: 20px;">
 Weather plays a huge role in bike-sharing. Factors such as temperature, humidity, and wind speed directly
 influence people's decisions to get on a bike. For instance, higher temperatures usually increase the number
 of cyclists, while very low temperatures or high humidity may decrease the number. Time of day and events
 such as holidays are also important. The morning and evening hours of commuting have the highest demand,
 while holidays usually have fewer rentals because of the reduced number of work commutes.
+</div>
 
 ## 📋 Methods  
 To predict bike-sharing demand, we tested two machine learning models: Decision Tree and Ridge Regression and 
@@ -121,23 +129,49 @@ We used the R² score to evaluate the models. This metric indicates how well the
 ## 💡 Key Insights 
 Our analysis revealed several valuable insights into the factors that influence bike-sharing demand:  
 
-1. Seasonal Patterns:  
+<span style="font-size: 20px; font-weight: bold;">Seasonal Patterns</span>
+<div style="text-align: justify; margin: 20px;">
 One of the clearest trends was the seasonal variation in bike rentals. Demand was highest in summer, particularly during commuting hours (morning and evening), as warmer weather encouraged more people to cycle. In contrast, winter saw a significant drop in rentals due to colder temperatures and potentially hazardous conditions like snow or ice. Spring and autumn showed moderate demand, aligning with their milder weather.
-As shown in the graph, summer sees a much higher rented bike count compared to winter, where the count is relatively low and concentrated in the bottom-left region
+As shown in the graph, summer sees a much higher rented bike count compared to winter, where the count is relatively low and concentrated in the bottom-left region.
+</div>
 
-2. Holidays vs. non-holidays:
+
+<div style="text-align: center;">
+  ![ ](season_temp_count.png){width=80%}
+
+</div>
+
+
+<span style="font-size: 20px; font-weight: bold;">Holidays vs. Non-Holidays</span>
+<div style="text-align: justify; margin: 20px;">
 Another important finding was the difference in demand between holidays and non-holidays. On holidays, rentals were significantly lower, likely because fewer people were commuting to work or school. In contrast, weekdays saw higher and more consistent demand, reflecting the regular schedules of commuters.
-As illustrated in the box plot, bike rental counts on non-holidays have fewer outliers and shorter whiskers, indicating more consistent demand compared to holidays, which exhibit greater variability and a higher number of outliers.
- 
-3. Model Comparison:  
+As illustrated in the box plot (0: No Holiday, 1: Holiday), bike rental counts on non-holidays have fewer outliers and shorter whiskers, indicating more consistent demand compared to holidays, which exhibit greater variability and a higher number of outliers.
+</div>
+<div style="text-align: center;">
+![ ](holiday_dist.png){width=80%}
+</div>
+
+
+<span style="font-size: 20px; font-weight: bold;">Model Comparison</span>
+<div style="text-align: justify; margin: 20px;">  
 The Decision Tree model outperformed Ridge Regression, achieving an R² score of 0.8, meaning it explained 80% of the variation in bike-sharing demand. Ridge Regression, while simpler, achieved an R² score of 0.68, indicating limitations in capturing complex, non-linear relationships.
 Scatter plots comparing predicted and actual values further illustrated the Decision Tree's accuracy, particularly for lower-demand scenarios. While there were some mispredicted points (mainly in the top-left corner), the overall predictions were relatively accurate.
- 
+
+<div style="text-align: center;">
+![ ](prediction_error_tree.png){width=80%}
+</div>
 
 In contrast, Ridge Regression showed a much higher degree of variation, especially in high-demand scenarios. The model struggled to predict higher rental counts accurately, with several points in the top-left corner being significantly off.
+<div style="text-align: center;">
+![ ](prediction_error_ridge.png){width=80%}
+</div>
+
+ </div>
+
 
  
 ## 📢 Why It Matters
+<div style="text-align: justify; margin: 20px;">
 These insights are not just academic—they have real-world implications for bike-sharing companies and their users.
 
 1.	Placing Bikes Where They're Needed:
@@ -149,8 +183,11 @@ By predicting demand more accurately, companies can ensure that users rarely fac
 3.	Improving Operational Efficiency:
 Data-driven decision-making can help companies reduce waste, such as the costs of moving bikes unnecessarily or maintaining underutilized stations.
 Optimized bike-sharing systems also contribute to broader societal goals. By making cycling more convenient and reliable, these programs encourage sustainable transportation, reducing car usage and cutting greenhouse gas emissions.
+</div>
 
 ## 📌 Conclusion
+<div style="text-align: justify; margin: 20px;">
 Our project demonstrates the power of data science in solving real-world challenges. By analyzing patterns in weather, time, and events, we developed predictive models that can help bike-sharing programs meet demand more effectively. While the Decision Tree model outperformed Ridge Regression, both approaches highlighted the importance of using data to drive decisions.
 Looking ahead, incorporating additional data, such as real-time weather updates or social events, could improve prediction accuracy. Exploring advanced techniques like ensemble models—combinations of multiple machine learning algorithms—might also yield better results.
 Ultimately, the success of this project underscores the value of data-driven solutions in urban planning. By leveraging data science, bike-sharing companies can enhance their operations and contribute to a more sustainable and efficient future for cities worldwide.
+</div>
