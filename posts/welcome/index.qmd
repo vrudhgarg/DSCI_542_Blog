@@ -12,21 +12,21 @@ categories: [Blog]
 :::
 
 
-## Introduction  
+## 🚀 Introduction 
 Have you ever walked up to a bike-sharing station and found it empty just when you needed a ride? Frustrating, right? 
 What if bike-sharing systems could predict exactly when and where people will need bikes, ensuring they're always available? 
 That's where data science comes in! This project explored how weather, time, and events impact bike-sharing demand.
 Using data from Seoul's bike-sharing system, we developed predictive models to uncover patterns and provide insights
 that could help bike-sharing companies improve their services. 
 
-## The Problem
+## ❓ The Problem
 The challenge that bike-sharing programs consistently need to overcome is the availability of bikes at any 
 given time and location. Demand varies according to time of day, weather, and season, complicating the issue further. 
 Without an accurate forecast, riders may be confronted with either empty stations or delayed service, 
 defeating the very purpose of convenience these programs aim to provide. A data-driven approach will accurately 
 forecast bike demand and thus allow for better planning in the interest of operational efficiency.
 
-## What We Looked At
+## 🔍 What We Looked At
 To address this challenge, we analyzed a detailed [dataset](https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand) from Seoul’s bike-sharing program. The dataset included:
 
 1. Weather Data: These include temperature, humidity, wind speed, and visibility, factors that might be very influential in people's decisions to ride or not.
@@ -42,14 +42,14 @@ we decided to drop it.
 Curious about the issue? Check out this [link](https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features).
 :::
 
-### How Weather Affects Bike Demand
+### 🌦️ How Weather Affects Bike Demand
 Weather plays a huge role in bike-sharing. Factors such as temperature, humidity, and wind speed directly
 influence people's decisions to get on a bike. For instance, higher temperatures usually increase the number
 of cyclists, while very low temperatures or high humidity may decrease the number. Time of day and events
 such as holidays are also important. The morning and evening hours of commuting have the highest demand,
 while holidays usually have fewer rentals because of the reduced number of work commutes.
 
-## Methods  
+## 📋 Methods  
 To predict bike-sharing demand, we tested two machine learning models: Decision Tree and Ridge Regression and 
 each model brought unique strengths to the table.  
 
@@ -86,8 +86,9 @@ You need to be familiar with Linear Regression and linear algebra to understand 
 :::
 
 
-## Training and Validation
+## 🔄 Training and Validation
 To ensure our models made accurate predictions, we split the data into two parts:
+
    - Training data: Used to teach the models.
    - Testing data: Used to evaluate how well the models learned.
 
@@ -103,22 +104,21 @@ Think of this as teaching someone to cook. First, they practice using most of th
 a cookbook. Then, they are tested on a few hidden recipes. Repeating this process multiple
 times gives a more reliable assessment of their skills.
 
-
-
 ::: {.text-center}
 [![Source](cv.jpg){width=80%}](https://it.mathworks.com/discovery/cross-validation.html)  
 Source: [Cross-validation](https://it.mathworks.com/discovery/cross-validation.html)
 :::
 
 
-## Evaluation
+## ⚖️ Evaluation
 
 We used the R² score to evaluate the models. This metric indicates how well the model explains the data:
-•	0%: The model performs no better than random guessing.
-•	100%: The model makes perfect predictions.
-•	For example, an R² score of 80% means the model explains 80% of the variations in bike rentals.
 
-## Key Insights  
+   - 0%: The model performs no better than random guessing.
+   - 100%: The model makes perfect predictions.
+   - For example, an R² score of 80% means the model explains 80% of the variations in bike rentals.
+
+## 💡 Key Insights 
 Our analysis revealed several valuable insights into the factors that influence bike-sharing demand:  
 
 1. Seasonal Patterns:  
@@ -137,7 +137,7 @@ Scatter plots comparing predicted and actual values further illustrated the Deci
 In contrast, Ridge Regression showed a much higher degree of variation, especially in high-demand scenarios. The model struggled to predict higher rental counts accurately, with several points in the top-left corner being significantly off.
 
  
-## Why It Matters
+## 📢 Why It Matters
 These insights are not just academic—they have real-world implications for bike-sharing companies and their users.
 
 1.	Placing Bikes Where They're Needed:
@@ -150,7 +150,7 @@ By predicting demand more accurately, companies can ensure that users rarely fac
 Data-driven decision-making can help companies reduce waste, such as the costs of moving bikes unnecessarily or maintaining underutilized stations.
 Optimized bike-sharing systems also contribute to broader societal goals. By making cycling more convenient and reliable, these programs encourage sustainable transportation, reducing car usage and cutting greenhouse gas emissions.
 
-## Conclusion
+## 📌 Conclusion
 Our project demonstrates the power of data science in solving real-world challenges. By analyzing patterns in weather, time, and events, we developed predictive models that can help bike-sharing programs meet demand more effectively. While the Decision Tree model outperformed Ridge Regression, both approaches highlighted the importance of using data to drive decisions.
 Looking ahead, incorporating additional data, such as real-time weather updates or social events, could improve prediction accuracy. Exploring advanced techniques like ensemble models—combinations of multiple machine learning algorithms—might also yield better results.
 Ultimately, the success of this project underscores the value of data-driven solutions in urban planning. By leveraging data science, bike-sharing companies can enhance their operations and contribute to a more sustainable and efficient future for cities worldwide.

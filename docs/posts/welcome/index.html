@@ -159,15 +159,15 @@ ul.task-list li input[type="checkbox"] {
 <a href="https://spokesbicyclerentals.com">Source</a></p>
 </div>
 <section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<h2 class="anchored" data-anchor-id="introduction">🚀 Introduction</h2>
 <p>Have you ever walked up to a bike-sharing station and found it empty just when you needed a ride? Frustrating, right? What if bike-sharing systems could predict exactly when and where people will need bikes, ensuring they’re always available? That’s where data science comes in! This project explored how weather, time, and events impact bike-sharing demand. Using data from Seoul’s bike-sharing system, we developed predictive models to uncover patterns and provide insights that could help bike-sharing companies improve their services.</p>
 </section>
 <section id="the-problem" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem">The Problem</h2>
+<h2 class="anchored" data-anchor-id="the-problem">❓ The Problem</h2>
 <p>The challenge that bike-sharing programs consistently need to overcome is the availability of bikes at any given time and location. Demand varies according to time of day, weather, and season, complicating the issue further. Without an accurate forecast, riders may be confronted with either empty stations or delayed service, defeating the very purpose of convenience these programs aim to provide. A data-driven approach will accurately forecast bike demand and thus allow for better planning in the interest of operational efficiency.</p>
 </section>
 <section id="what-we-looked-at" class="level2">
-<h2 class="anchored" data-anchor-id="what-we-looked-at">What We Looked At</h2>
+<h2 class="anchored" data-anchor-id="what-we-looked-at">🔍 What We Looked At</h2>
 <p>To address this challenge, we analyzed a detailed <a href="https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand">dataset</a> from Seoul’s bike-sharing program. The dataset included:</p>
 <ol type="1">
 <li>Weather Data: These include temperature, humidity, wind speed, and visibility, factors that might be very influential in people’s decisions to ride or not.</li>
@@ -189,12 +189,12 @@ Note
 </div>
 </div>
 <section id="how-weather-affects-bike-demand" class="level3">
-<h3 class="anchored" data-anchor-id="how-weather-affects-bike-demand">How Weather Affects Bike Demand</h3>
+<h3 class="anchored" data-anchor-id="how-weather-affects-bike-demand">🌦️ How Weather Affects Bike Demand</h3>
 <p>Weather plays a huge role in bike-sharing. Factors such as temperature, humidity, and wind speed directly influence people’s decisions to get on a bike. For instance, higher temperatures usually increase the number of cyclists, while very low temperatures or high humidity may decrease the number. Time of day and events such as holidays are also important. The morning and evening hours of commuting have the highest demand, while holidays usually have fewer rentals because of the reduced number of work commutes.</p>
 </section>
 </section>
 <section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<h2 class="anchored" data-anchor-id="methods">📋 Methods</h2>
 <p>To predict bike-sharing demand, we tested two machine learning models: Decision Tree and Ridge Regression and each model brought unique strengths to the table.</p>
 <p><span style="font-size: 20px; font-weight: bold;">Decision Tree</span></p>
 <div style="margin-left: 20px;">
@@ -229,8 +229,12 @@ Warning
 </div>
 </section>
 <section id="training-and-validation" class="level2">
-<h2 class="anchored" data-anchor-id="training-and-validation">Training and Validation</h2>
-<p>To ensure our models made accurate predictions, we split the data into two parts: - Training data: Used to teach the models. - Testing data: Used to evaluate how well the models learned.</p>
+<h2 class="anchored" data-anchor-id="training-and-validation">🔄 Training and Validation</h2>
+<p>To ensure our models made accurate predictions, we split the data into two parts:</p>
+<ul>
+<li>Training data: Used to teach the models.</li>
+<li>Testing data: Used to evaluate how well the models learned.</li>
+</ul>
 <p>We also applied Cross-Validation, a method that divides the training data into multiple subsets and rotates between training and validating. This approach ensures the model’s performance is consistent and not based on luck. For example:</p>
 <ul>
 <li>The data is split into five subsets.</li>
@@ -244,11 +248,16 @@ Source: <a href="https://it.mathworks.com/discovery/cross-validation.html">Cross
 </div>
 </section>
 <section id="evaluation" class="level2">
-<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
-<p>We used the R² score to evaluate the models. This metric indicates how well the model explains the data: • 0%: The model performs no better than random guessing. • 100%: The model makes perfect predictions. • For example, an R² score of 80% means the model explains 80% of the variations in bike rentals.</p>
+<h2 class="anchored" data-anchor-id="evaluation">⚖️ Evaluation</h2>
+<p>We used the R² score to evaluate the models. This metric indicates how well the model explains the data:</p>
+<ul>
+<li>0%: The model performs no better than random guessing.</li>
+<li>100%: The model makes perfect predictions.</li>
+<li>For example, an R² score of 80% means the model explains 80% of the variations in bike rentals.</li>
+</ul>
 </section>
 <section id="key-insights" class="level2">
-<h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
+<h2 class="anchored" data-anchor-id="key-insights">💡 Key Insights</h2>
 <p>Our analysis revealed several valuable insights into the factors that influence bike-sharing demand:</p>
 <ol type="1">
 <li><p>Seasonal Patterns:<br>
@@ -260,7 +269,7 @@ The Decision Tree model outperformed Ridge Regression, achieving an R² score of
 <p>In contrast, Ridge Regression showed a much higher degree of variation, especially in high-demand scenarios. The model struggled to predict higher rental counts accurately, with several points in the top-left corner being significantly off.</p>
 </section>
 <section id="why-it-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h2>
+<h2 class="anchored" data-anchor-id="why-it-matters">📢 Why It Matters</h2>
 <p>These insights are not just academic—they have real-world implications for bike-sharing companies and their users.</p>
 <ol type="1">
 <li><p>Placing Bikes Where They’re Needed: During peak times, such as summer mornings, bike-sharing companies can allocate more bikes to residential areas to meet commuter demand. Similarly, stations near offices and train stations might need extra bikes in the evenings.</p></li>
@@ -269,7 +278,7 @@ The Decision Tree model outperformed Ridge Regression, achieving an R² score of
 </ol>
 </section>
 <section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<h2 class="anchored" data-anchor-id="conclusion">📌 Conclusion</h2>
 <p>Our project demonstrates the power of data science in solving real-world challenges. By analyzing patterns in weather, time, and events, we developed predictive models that can help bike-sharing programs meet demand more effectively. While the Decision Tree model outperformed Ridge Regression, both approaches highlighted the importance of using data to drive decisions. Looking ahead, incorporating additional data, such as real-time weather updates or social events, could improve prediction accuracy. Exploring advanced techniques like ensemble models—combinations of multiple machine learning algorithms—might also yield better results. Ultimately, the success of this project underscores the value of data-driven solutions in urban planning. By leveraging data science, bike-sharing companies can enhance their operations and contribute to a more sustainable and efficient future for cities worldwide.</p>
 
 
