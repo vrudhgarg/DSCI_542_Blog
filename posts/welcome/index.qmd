@@ -12,7 +12,7 @@ categories: [Blog]
 :::
 
 
-# Introduction  
+## Introduction  
 Have you ever walked up to a bike-sharing station and found it empty just when you needed a ride? Frustrating, right? 
 What if bike-sharing systems could predict exactly when and where people will need bikes, ensuring they're always available? 
 That's where data science comes in! This project explored how weather, time, and events impact bike-sharing demand.
@@ -33,8 +33,14 @@ To address this challenge, we analyzed a detailed [dataset](https://archive.ics.
 2. Temporal Information: Patterns concerning the time of day, day of week, and season. For instance, rush hour and summer days are periods of high demand.
 3. Event Indicators: Data regarding holidays and whether the system was up or not; holidays tend to have lower demand, while weekdays are usually more consistent.
 
-We cleaned up the data before diving into the analysis. One thing we noticed was that the "Dew Point Temperature" variable was basically telling us the same thing as regular temperature - they moved up and down together. Since it wasn't adding any new insights and could actually mess with our machine learning predictions, we decided to drop it.
-Curiou   s about the issue? Check out this [link](https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features).
+We cleaned up the data before diving into the analysis. One thing we noticed was that the "Dew Point Temperature" 
+variable was basically telling us the same thing as regular temperature - they moved up and down together. 
+Since it wasn't adding any new insights and could actually mess with our machine learning predictions, so
+we decided to drop it.
+
+:::{.callout-note}
+Curious about the issue? Check out this [link](https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features).
+:::
 
 ### How Weather Affects Bike Demand
 Weather plays a huge role in bike-sharing. Factors such as temperature, humidity, and wind speed directly
@@ -43,28 +49,42 @@ of cyclists, while very low temperatures or high humidity may decrease the numbe
 such as holidays are also important. The morning and evening hours of commuting have the highest demand,
 while holidays usually have fewer rentals because of the reduced number of work commutes.
 
-# Methods  
+## Methods  
 To predict bike-sharing demand, we tested two machine learning models: Decision Tree and Ridge Regression and 
 each model brought unique strengths to the table.  
 
-1. Decision Tree:  
-   - Think of this model as a flowchart that splits the data into smaller groups based on patterns.
-    For example, it might first look at the temperature, then the time of day, and figure out how these factors
-     affect bike demand. Decision Trees are great for identifying complex patterns in the data, especially 
-     when the relationships aren't straightforward.  
-   - To explain how a Decision Tree works, I've included a simple example about classifying birds. Here's how 
-   the model splits the data step by step:  
-     - First, it checks if the animal can fly.  
-     - Next, it checks if it lays eggs or has feathers.  
-     - Based on this information, it classifies the animal as a bird (like a penguin or a sparrow) or a mammal (like a bat).  
+<span style="font-size: 20px; font-weight: bold;">Decision Tree</span>
 
+   <div style="margin-left: 20px;">
+   Think of this model as a flowchart that splits the data into smaller groups based on patterns.
+   For example, it might first look at the temperature, then the time of day, and figure out how these factors
+   affect bike demand. Decision Trees are great for identifying complex patterns in the data, especially 
+   when the relationships aren't straightforward.  
+   
+
+   To explain how a Decision Tree works, I've included a simple example about classifying birds. Here's how 
+   the model splits the data step by step:  
+
+      - First, it checks if the animal can fly.  
+      - Next, it checks if it lays eggs or has feathers.  
+      - Based on this information, it classifies the animal as a bird (like a penguin or a sparrow) or a mammal (like a bat).  
+   </div>
 ::: {.text-center}
-[![Source](tree_diagram.png){width=80%}](https://insidelearningmachines.com/interpret_decision_trees/)  
+[![Source](tree_diagram.png){width=60%}](https://insidelearningmachines.com/interpret_decision_trees/)  
 Source: [Decision Tree](https://insidelearningmachines.com/interpret_decision_trees/)
 :::
 
 2. Ridge Regression:  
-   - A simpler, linear model, Ridge Regression creates a straight-line relationship between features and outcomes. While less flexible than Decision Trees, Ridge Regression is more resistant to overfitting and provides a useful benchmark for comparison.  
+   - A simpler, linear model, Ridge Regression creates a straight-line relationship between features and outcomes.
+    While less flexible than Decision Trees, Ridge Regression is more resistant to overfitting and provides a 
+    useful benchmark for comparison. I won't go into much detail here, but if you'd like to learn more about Ridge
+     Regression, feel free to [check this out](https://www.ibm.com/think/topics/ridge-regression).
+
+:::{.callout-warning}
+#### Warning
+You need to be familiar with Linear Regression and linear algebra to understand Ridge Regression.
+:::
+
 
 ## Training and Validation
 To ensure our models made accurate predictions, we split the data into two parts:

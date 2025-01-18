@@ -158,9 +158,10 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://spokesbicyclerentals.com"><img src="cover_img.jpg" class="img-fluid" alt="Source"></a><br>
 <a href="https://spokesbicyclerentals.com">Source</a></p>
 </div>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Have you ever walked up to a bike-sharing station and found it empty just when you needed a ride? Frustrating, right? What if bike-sharing systems could predict exactly when and where people will need bikes, ensuring they’re always available? That’s where data science comes in! This project explored how weather, time, and events impact bike-sharing demand. Using data from Seoul’s bike-sharing system, we developed predictive models to uncover patterns and provide insights that could help bike-sharing companies improve their services.</p>
+</section>
 <section id="the-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-problem">The Problem</h2>
 <p>The challenge that bike-sharing programs consistently need to overcome is the availability of bikes at any given time and location. Demand varies according to time of day, weather, and season, complicating the issue further. Without an accurate forecast, riders may be confronted with either empty stations or delayed service, defeating the very purpose of convenience these programs aim to provide. A data-driven approach will accurately forecast bike demand and thus allow for better planning in the interest of operational efficiency.</p>
@@ -173,41 +174,60 @@ ul.task-list li input[type="checkbox"] {
 <li>Temporal Information: Patterns concerning the time of day, day of week, and season. For instance, rush hour and summer days are periods of high demand.</li>
 <li>Event Indicators: Data regarding holidays and whether the system was up or not; holidays tend to have lower demand, while weekdays are usually more consistent.</li>
 </ol>
-<p>We cleaned up the data before diving into the analysis. One thing we noticed was that the “Dew Point Temperature” variable was basically telling us the same thing as regular temperature - they moved up and down together. Since it wasn’t adding any new insights and could actually mess with our machine learning predictions, we decided to drop it. Curiou s about the issue? Check out this <a href="https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features">link</a>.</p>
+<p>We cleaned up the data before diving into the analysis. One thing we noticed was that the “Dew Point Temperature” variable was basically telling us the same thing as regular temperature - they moved up and down together. Since it wasn’t adding any new insights and could actually mess with our machine learning predictions, so we decided to drop it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Curious about the issue? Check out this <a href="https://datascience.stackexchange.com/questions/24452/in-supervised-learning-why-is-it-bad-to-have-correlated-features">link</a>.</p>
+</div>
+</div>
 <section id="how-weather-affects-bike-demand" class="level3">
 <h3 class="anchored" data-anchor-id="how-weather-affects-bike-demand">How Weather Affects Bike Demand</h3>
 <p>Weather plays a huge role in bike-sharing. Factors such as temperature, humidity, and wind speed directly influence people’s decisions to get on a bike. For instance, higher temperatures usually increase the number of cyclists, while very low temperatures or high humidity may decrease the number. Time of day and events such as holidays are also important. The morning and evening hours of commuting have the highest demand, while holidays usually have fewer rentals because of the reduced number of work commutes.</p>
 </section>
 </section>
-</section>
-<section id="methods" class="level1">
-<h1>Methods</h1>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <p>To predict bike-sharing demand, we tested two machine learning models: Decision Tree and Ridge Regression and each model brought unique strengths to the table.</p>
-<ol type="1">
-<li>Decision Tree:
-<ul>
-<li>Think of this model as a flowchart that splits the data into smaller groups based on patterns. For example, it might first look at the temperature, then the time of day, and figure out how these factors affect bike demand. Decision Trees are great for identifying complex patterns in the data, especially when the relationships aren’t straightforward.<br>
-</li>
-<li>To explain how a Decision Tree works, I’ve included a simple example about classifying birds. Here’s how the model splits the data step by step:
-<ul>
-<li>First, it checks if the animal can fly.<br>
-</li>
-<li>Next, it checks if it lays eggs or has feathers.<br>
-</li>
-<li>Based on this information, it classifies the animal as a bird (like a penguin or a sparrow) or a mammal (like a bat).</li>
-</ul></li>
-</ul></li>
-</ol>
+<p><span style="font-size: 20px; font-weight: bold;">Decision Tree</span></p>
+<div style="margin-left: 20px;">
+<p>Think of this model as a flowchart that splits the data into smaller groups based on patterns. For example, it might first look at the temperature, then the time of day, and figure out how these factors affect bike demand. Decision Trees are great for identifying complex patterns in the data, especially when the relationships aren’t straightforward.</p>
+<p>To explain how a Decision Tree works, I’ve included a simple example about classifying birds. Here’s how the model splits the data step by step:</p>
+<pre><code>  - First, it checks if the animal can fly.  
+  - Next, it checks if it lays eggs or has feathers.  
+  - Based on this information, it classifies the animal as a bird (like a penguin or a sparrow) or a mammal (like a bat).  </code></pre>
+</div>
 <div class="text-center">
-<p><a href="https://insidelearningmachines.com/interpret_decision_trees/"><img src="tree_diagram.png" class="img-fluid" style="width:80.0%" alt="Source"></a><br>
+<p><a href="https://insidelearningmachines.com/interpret_decision_trees/"><img src="tree_diagram.png" class="img-fluid" style="width:60.0%" alt="Source"></a><br>
 Source: <a href="https://insidelearningmachines.com/interpret_decision_trees/">Decision Tree</a></p>
 </div>
 <ol start="2" type="1">
 <li>Ridge Regression:
 <ul>
-<li>A simpler, linear model, Ridge Regression creates a straight-line relationship between features and outcomes. While less flexible than Decision Trees, Ridge Regression is more resistant to overfitting and provides a useful benchmark for comparison.</li>
+<li>A simpler, linear model, Ridge Regression creates a straight-line relationship between features and outcomes. While less flexible than Decision Trees, Ridge Regression is more resistant to overfitting and provides a useful benchmark for comparison. I won’t go into much detail here, but if you’d like to learn more about Ridge Regression, feel free to <a href="https://www.ibm.com/think/topics/ridge-regression">check this out</a>.</li>
 </ul></li>
 </ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You need to be familiar with Linear Regression and linear algebra to understand Ridge Regression.</p>
+</div>
+</div>
+</section>
 <section id="training-and-validation" class="level2">
 <h2 class="anchored" data-anchor-id="training-and-validation">Training and Validation</h2>
 <p>To ensure our models made accurate predictions, we split the data into two parts: - Training data: Used to teach the models. - Testing data: Used to evaluate how well the models learned.</p>
@@ -253,7 +273,6 @@ The Decision Tree model outperformed Ridge Regression, achieving an R² score of
 <p>Our project demonstrates the power of data science in solving real-world challenges. By analyzing patterns in weather, time, and events, we developed predictive models that can help bike-sharing programs meet demand more effectively. While the Decision Tree model outperformed Ridge Regression, both approaches highlighted the importance of using data to drive decisions. Looking ahead, incorporating additional data, such as real-time weather updates or social events, could improve prediction accuracy. Exploring advanced techniques like ensemble models—combinations of multiple machine learning algorithms—might also yield better results. Ultimately, the success of this project underscores the value of data-driven solutions in urban planning. By leveraging data science, bike-sharing companies can enhance their operations and contribute to a more sustainable and efficient future for cities worldwide.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
